@@ -78,7 +78,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">100,7</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">200,73 200,90 360,90 360,30 390,30</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">200,73 200,257</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Aprendiendo sobre Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -109,110 +109,89 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[varTextoAEscribir]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID1">
+        <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">390,4.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">490,55.5 490,87</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">100,257</av:Point>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EscribirHolaMundo workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="XAMLcreadosEnElCurso\EscribirTextoEnNotepad.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_varTextoEscribir">Hola mundo desde XAML</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
+          <Sequence DisplayName="Codificando" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="arrayPalabrasClaves" />
+              <Variable x:TypeArguments="x:Int32" Name="varCantidadArchivos" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </ui:InvokeWorkflowFile>
-          <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID0">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">390,87</av:Point>
-                  <av:Size x:Key="ShapeSize">200,66</av:Size>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Enfocar Aplicación" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'notepad.exe Untitled'" sap:VirtualizedContainerService.HintSize="434,334" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="16d183e2c533951686457d85f42fb442" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='*Untitled - Notepad' /&gt;">
-                  <ui:WindowScope.Body>
-                    <ActivityAction x:TypeArguments="x:Object">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,188" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="Hola desde el enfocar Aplicación.">
-                          <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f73c423f-b71a-40b1-87c2-d2aaa6523f89">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:TypeInto.Target>
-                        </ui:TypeInto>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:WindowScope.Body>
-                </ui:WindowScope>
-              </Sequence>
-            </FlowStep>
-          </FlowStep.Next>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[arrayPalabrasClaves]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Split(varTextoAEscribir, ",")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Encontré &quot; + arrayPalabrasClaves.Length.ToString + &quot; palabras claves&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[varCantidadArchivos]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles("C:\Users\vichm\Documents\UiPath\cursoRPA_Platzi\Archivo","*").Count()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Encontré &quot; + varCantidadArchivos.ToString + &quot; cantidad archivos&quot;]" />
+          </Sequence>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID0</x:Reference>
-    <FlowStep>
+    <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">100,257</av:Point>
+          <av:Point x:Key="ShapeLocation">390,87</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Codificando" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="s:String[]" Name="arrayPalabrasClaves" />
-          <Variable x:TypeArguments="x:Int32" Name="varCantidadArchivos" />
-        </Sequence.Variables>
+      <Sequence DisplayName="Enfocar Aplicación" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-          <Assign.To>
-            <OutArgument x:TypeArguments="s:String[]">[arrayPalabrasClaves]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="s:String[]">[Split(varTextoAEscribir, ",")]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Encontré &quot; + arrayPalabrasClaves.Length.ToString + &quot; palabras claves&quot;]" />
-        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:Int32">[varCantidadArchivos]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles("C:\Users\vichm\Documents\UiPath\cursoRPA_Platzi\Archivo","*").Count()]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Encontré &quot; + varCantidadArchivos.ToString + &quot; cantidad archivos&quot;]" />
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'notepad.exe Untitled'" sap:VirtualizedContainerService.HintSize="434,334" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="16d183e2c533951686457d85f42fb442" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='*Untitled - Notepad' /&gt;">
+          <ui:WindowScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,188" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="Hola desde el enfocar Aplicación.">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f73c423f-b71a-40b1-87c2-d2aaa6523f89">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+              </Sequence>
+            </ActivityAction>
+          </ui:WindowScope.Body>
+        </ui:WindowScope>
       </Sequence>
     </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -243,6 +222,27 @@
         </sap:WorkflowViewStateService.ViewState>
       </Sequence>
     </FlowStep>
-    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">390,4.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">490,55.5 490,87</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EscribirHolaMundo workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="XAMLcreadosEnElCurso\EscribirTextoEnNotepad.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_varTextoEscribir">Hola mundo desde XAML</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID1</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
   </Flowchart>
 </Activity>
